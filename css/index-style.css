@@ -1,0 +1,551 @@
+
+
+
+:root[data-theme="light"] {
+  --border: #4932C9;
+  --window-background:#F9EFF9;
+  --background-image: url("../images/uf0x54.webp");
+  --button-image: url("../images/button.png");
+  --outer-color: #94F1E1;
+  --title: #EDD0EE;
+  --inactive: #E2E2E2;
+  --text: #4932C9;
+  --button-normal: url("../images/button%20%281%29.png");
+        --button-hovered: url("../images/button_hovered.png");
+      --button-pressed: url("../images/button_pressed.png");
+      --button-disabled: url("../images/button_disabled.png");
+      --window-button: url("../images/window_buttons2.png");
+      --bio: url("../images/bio.png");
+      --pfp: url("../images/kangel_pfp.png");
+}
+
+:root[data-theme="dark"] {
+  --border: #343135;
+  --window-background:#605876;
+    --background-image: url("../images/Untitled149_20250427202555.png");
+    --button-image: url("../images/Untitled48_20250910165339.png");
+    --outer-color: #959ac6;
+    --title: #802426;
+    --inactive: #6b6e8a;
+    --text: white;
+      --button-normal: url("../images/wehbx6.png");
+      --button-hovered: url("../images/Untitled49_20250910173149.png");
+      --button-pressed: url("../images/pressed.png");
+      --button-disabled: url("../images/button_disabled.png");
+      --window-button: url("../images/Untitled50_20250910172303.png");
+      --bio: url("../images/Untitled51_20250910172511.png");
+       --pfp: url("../images/ame_pfp.png");
+    }
+
+
+	
+
+    .squared {
+background-color: var(--border);
+width: 17px;
+height: 16px;
+margin-right: 5px;
+margin-left: 2px;
+    }
+
+	
+	#ferbing {
+	position: absolute;
+	width: 230px;
+	height: 190px;
+	z-index: 10;
+	margin-top: -170px;
+	margin-left: 130px;
+	  background:center center / cover no-repeat url('../images/BROCK.webp');
+
+	}
+
+	
+	.stamps marquee span{
+    font-style: italic;
+    color: white;
+    filter: drop-shadow(1px 1px 0 rgb(122, 122, 122)) drop-shadow(-1px 1px 0 rgb(122, 122, 122)) drop-shadow(0 -1px 0 rgb(122, 122, 122)) drop-shadow(1px 0 rgb(122, 122, 122));
+}
+
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../fonts/PixelMplus10-Regular.ttf') format('truetype');
+    /* Add additional src declarations for other font formats if desired */
+}
+
+
+body {
+    font-family: 'CustomFont', Arial, Helvetica, sans-serif;
+    margin: 0;
+    margin-top: 10px;
+    color: var(--text);
+    background-image: var(--background-image);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    margin: 0;
+}
+
+
+#container {
+    max-width: 1100px;
+    /* this is the width of your layout! */
+    /* if you change the above value, scroll to the bottom
+          and change the media query according to the comment! */
+    margin: 0 auto;
+    /* this centers the entire page */
+}
+
+    /* the area below is for all links on your page
+        EXCEPT for the navigation */
+    #container a {
+        color: var(--text);
+        font-weight: bold;
+        /* if you want to remove the underline
+        you can add a line below here that says:
+        text-decoration:none; */
+    }
+
+            a:hover {
+                cursor: url('../images/cursor.png'), auto;
+            }
+            * {
+                cursor: url('../images/cursor.png'), auto;
+            }
+			
+#header {
+    width: 100%;
+    background-color: var(--border);
+    /* header color here! */
+    /* this is only for a background image! */
+    /* if you want to put images IN the header,
+          you can add them directly to the <div id="header"></div> element! */
+    background-size: contain;
+    background-image: var(--header-image);
+    background-position: center;
+    height: 225px;
+    width: 700px;
+}
+
+    #header img {
+        height: 225px;
+        width: 700px;
+    }
+
+
+/* navigation section!! */
+#navbar {
+    height: 40px;
+    background-color: var(--window-background);
+    /* navbar color */
+    width: 100%;
+    border-top: solid;
+    border-color: var(--border);
+    border-width: 2px;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+/* navigation links*/
+    #navbar li a {
+        color: var(--text);
+        /* navbar text color */
+        font-weight: 800;
+        text-decoration: none;
+        /* this removes the underline */
+    }
+
+/* navigation link when a link is hovered over */
+#navbar li a:hover {
+    color: #a49cba;
+    text-decoration: underline;
+}
+
+#flex {
+    display: flex;
+}
+
+/* this colors BOTH sidebars
+        if you want to style them separately,
+        create styles for #leftSidebar and #rightSidebar */
+
+/* this is the color of the main content area,
+        between the sidebars! */
+#content {
+    flex: 1;
+    order: 2;
+    margin-right: 0px;
+    width: 100%;
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    background-color: var(--inactive);
+    padding: 3px;
+    padding-bottom: 0;
+    font-size: smaller;
+    display: flex;
+    flex-direction: column;
+}
+#content:hover {
+    background-color:  var(--outer-color);
+}
+
+#leftSidebar {
+    order: 1;
+}
+
+#rightSidebar {
+    order: 3;
+}
+
+footer {
+    background-color: var(--inactive);
+    /* background color for footer */
+    width: 100%;
+    /*height: 40px;*/
+    padding: 3px;
+    padding-bottom: 0;
+    /*text-align: center;*/
+    /* this centers the footer text */
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+footer:hover {
+    background-color: var(--outer-color);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+h1 {
+    font-size: 25px;
+}
+
+strong {
+    color: var(--text);
+}
+
+
+.box {
+    background-color: transparent;
+    padding: 10px;
+    margin: 0;
+}
+
+.rectangle {
+    width: 35px;
+    height: 8px;
+    background: var(--title);
+    margin-top: 4px;
+    margin-bottom: 0px;
+    border: solid;
+    border-bottom: none;
+    border-color: var(--border);
+    border-width: 2px;
+}
+
+.square {
+    width: 6px;
+    height: 6px;
+    margin-top: 4px;
+    margin-bottom: 0px;
+    margin-left: 1px;
+    /*margin-right: 0px;*/
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+}
+
+#bottombottoms {
+    display: flex;
+    
+}
+/* CSS for extras */
+#toppart {
+    background-color: var(--inactive);
+    border: solid;
+    border-color: var(--border);
+    margin-bottom: 10px;
+    border-width: 2px;
+    margin-right: 10px;
+    padding: 3px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+}
+
+    #toppart:hover {
+        background-color: var(--outer-color);
+    }
+
+#topBar {
+    display: flex; /* Add this to enable Flexbox */
+    align-items: center; /* Vertically center items */
+    justify-content: flex-start; /* Align items to the left */
+    width: 100%;
+    height: 30px;
+    /*padding: 3px;*/
+    padding-top: 0;
+    padding-bottom: 0;
+    /*font-size: smaller;*/
+    color: var(--text);
+/*    background-color: #e2e2e2;*/
+    border-bottom: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    border-bottom: none;
+}
+
+/*    #topBar:hover {
+        background-color: #94f1e1;
+    }*/
+
+#internaltopBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the left and right edges */
+    width: 100%;
+    height: 26px;
+    padding-left: 1px;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--border);
+    background-color: var(--inactive);
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+}
+
+
+.hoverable:hover {
+  background: var(--outer-color);
+}
+
+.hoverable:hover #internaltopBar {
+  background: var(--title);
+}
+
+
+#amegif {
+    height: 225px;
+    width: 348px;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+
+
+#leftContent {
+    display: flex;
+    align-items: center;
+}
+
+
+#internaltopBar p {
+    margin: 0; /* Reset margin to remove extra spacing */
+}
+
+#internaltopBar img {
+    padding-right: 4px;
+}
+
+#internaltopBar #button {
+    justify-content: flex-end; /* Align the buttons to the right */
+}
+
+#leftButtons {
+    display: flex;
+    align-items: center;
+    background-image: var(--window-button);
+    width: 70px;
+    height: 23px;
+}
+
+#internalheaderArea {
+    font-weight: bold;
+    font-size: medium;
+    color: var(--text);
+    background-color: var(--window-background);
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    margin-top: 1px;
+}
+
+#leftSidebar {
+    margin-right: 10px;
+    width: 400px;
+    border: solid;
+    border-color: var(--border);
+    border-width: 2px;
+    background-color: var(--inactive);
+    padding: 3px; 
+    padding-bottom: 0px;
+    font-size: smaller;
+}
+
+    #leftSidebar:hover {
+        background-color: var(--outer-color);
+    }
+
+.side-by-side {
+    display: flex;
+    align-items: center; /* Vertically align items */
+}
+
+    .side-by-side h3 {
+        margin: 0; /* Reset margin to remove extra spacing */
+        margin-left: -15px;
+        margin-top: -15px;
+        margin-bottom: 5px;
+
+    }
+
+    .side-by-side img {
+        width: 100px;
+        height: 100px;
+        margin: 0;
+        margin-right: 20px; /* Add some spacing between img and h3 */
+        border: solid;
+        border-color: var(--border);
+        border-radius: 100%;
+        border-width: 0px;
+    }
+
+#leftSidebarTopBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 30px;
+    color: var(--text);
+    background-color: var(--inactive);
+    border-bottom: solid;
+    border-color: var(--border);
+    border-width: 2px;
+}
+/*    #leftSidebarTopBar:hover {
+        background-color: #ead2ec;
+    }*/
+
+#bottomBarMargin {
+    padding: 20px;
+    border: solid;
+    background-color: var(--window-background);
+    border-color: var(--border);
+    border-width: 2px;
+    margin-top: 3px;
+    flex-grow: 1;
+}
+
+
+button {
+  color: var(--text);
+  image-rendering: pixelated;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: center;
+  border: 4px solid transparent;
+  border-image: var(--button-normal) 4 fill repeat;
+  font-size: 15px;
+}
+
+button:hover {
+  cursor: url("/click.png"), auto;
+  border-image: var(--button-hovered) 4 fill repeat;
+}
+
+button:active {
+  /*border-style: inset;*/
+  border-image: var(--button-pressed) 4 fill repeat;
+}
+
+button:disabled {
+  /*border-style: inset;*/
+  border-image: var(--button_disabled) 4 fill repeat;
+}
+
+
+
+/* BELOW THIS POINT IS MEDIA QUERY */
+
+@media only screen and (max-width: 1000px) {
+    #flex {
+        flex-wrap: wrap;
+    }
+
+    #top {
+        order: 2;
+    }
+
+    #leftSidebar {
+        order: 1;
+    }
+
+    #content {
+        order: 2;
+    }
+
+    #navbar ul {
+        flex-wrap: wrap;
+    }
+
+    #flex {
+        flex-direction: column; /* Stack elements vertically on mobile */
+    }
+
+    /* Add other mobile-specific styles here */
+
+    #bannerimage {
+        height: 115px;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+    #amegif {
+        height: 115px;
+        width: auto;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+    }
+
+}
+
+
+.pfp {
+          width: 100px;
+        height: 100px;
+        margin: 0;
+        margin-right: 20px; /* Add some spacing between img and h3 */
+        border: solid;
+        border-color: var(--border);
+        border-radius: 100%;
+        border-width: 0px;
+        background-image: var(--pfp);
+        background-size: contain;
+}
+	
